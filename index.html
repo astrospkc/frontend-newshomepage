@@ -1,0 +1,217 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <!-- displays site properly based on user's device -->
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Source+Sans+Pro:ital,wght@0,700;1,600&family=Ubuntu:ital,wght@0,300;0,400;0,500;0,700;1,300;1,400;1,500;1,700&display=swap"
+      rel="stylesheet"
+    />
+
+    <link
+      rel="icon"
+      type="image/png"
+      sizes="32x32"
+      href="./assets/images/favicon-32x32.png"
+    />
+    <script>
+      tailwind.config = {
+        theme: {
+          extend: {
+            fontFamily: {
+              ubuntu: ["Ubuntu"],
+            },
+          },
+        },
+      };
+    </script>
+
+    <title>Frontend Mentor | News homepage</title>
+
+    <!-- Feel free to remove these styles or customise in your own stylesheet 👍 -->
+    <style>
+      .attribution {
+        font-size: 11px;
+        text-align: center;
+      }
+      .attribution a {
+        color: hsl(228, 45%, 44%);
+      }
+    </style>
+  </head>
+  <body class="bg-white lg:bg-gray-300 font-ubuntu">
+    <div
+      class="bg-white m-3 lg:m-28 overflow-y-clip lg:shadow-lg lg:shadow-slate-400"
+    >
+      <div class="lg:px-14">
+        <div class="flex flex-row justify-between">
+          <h1 class="text-5xl font-extrabold my-auto">W.</h1>
+          <span class="text-3xl cursor-pointer m-2 lg:hidden block">
+            <img
+              name="menu"
+              src="./assets/images/icon-menu.svg"
+              alt=""
+              onclick="toggleMenu(this)"
+            />
+          </span>
+
+          <div
+            id="navbar"
+            class="navlink absolute lg:static right-0 bg-white top-0 min-h-full lg:min-h-fit w-1/2 lg:w-auto px-4 hidden lg:inline-block"
+          >
+            <img
+              name="close"
+              src="./assets/images/icon-menu-close.svg"
+              alt=""
+              class="lg:hidden absolute right-5 top-5"
+              onclick="toggleMenu(this)"
+            />
+            <ul
+              class="flex flex-col lg:flex-row lg:mx-4 lg:mb-4 lg:pb-8 gap-7 my-11 lg:gap-0"
+            >
+              <li
+                class="mx-5 text-xl hover:text-yellow-600 hover:cursor-pointer font-ubuntu"
+              >
+                Home
+              </li>
+
+              <li
+                class="mx-5 text-xl hover:text-yellow-600 hover:cursor-pointer"
+              >
+                New
+              </li>
+              <li
+                class="mx-5 text-xl hover:text-yellow-600 hover:cursor-pointer"
+              >
+                Popular
+              </li>
+              <li
+                class="mx-5 text-xl hover:text-yellow-600 hover:cursor-pointer"
+              >
+                Trending
+              </li>
+              <li
+                class="mx-5 text-xl hover:text-yellow-600 hover:cursor-pointer"
+              >
+                Categories
+              </li>
+            </ul>
+          </div>
+        </div>
+        <div class="flex flex-col lg:flex-row h-fit">
+          <div class="lg:mr-7">
+            <!-- image -->
+            <section>
+              <img src="./assets/images/image-web-3-desktop.jpg" alt="" />
+            </section>
+            <!-- headline -->
+            <div class="flex flex-col lg:flex-row my-4">
+              <div class="text-black mr-3 text-5xl font-extrabold">
+                The Bright Future of Web 3.0?
+              </div>
+              <!-- text -->
+              <div class="flex flex-col mt-4 lg:ml-10">
+                <div class="text-left text-xl">
+                  We dive into the next evolution of the web that claims to put
+                  the power of the platforms back into the hands of the people.
+                  But is it really fulfilling its promise?
+                </div>
+                <button
+                  class="text-white text-left bg-orange-700 w-fit px-6 mt-9 mb-4 py-3 hover:bg-gray-600"
+                >
+                  Read more
+                </button>
+              </div>
+            </div>
+          </div>
+          <div class="bg-black p-5 mb-4 lg:w-2/3">
+            <h1 class="text-yellow-500 text-5xl font-bold">New</h1>
+            <!-- 1st div -->
+            <div class="my-6">
+              <h1 class="text-white font-semibold text-xl">
+                Hydrogen VS Electric Cars
+              </h1>
+              <p class="text-gray-400 my-3 text-lg">
+                Will hydrogen-fueled cars ever catch up to EVs?
+              </p>
+            </div>
+            <hr />
+
+            <!-- 2nd div -->
+            <div class="my-8">
+              <h1 class="text-white font-semibold text-xl">
+                The Downsides of AI Artistry
+              </h1>
+              <p class="text-gray-400 my-3 text-lg">
+                What are the possible adverse effects of on-demand AI image
+                generation?
+              </p>
+            </div>
+            <hr />
+
+            <!-- 3rd div -->
+            <div class="my-8">
+              <h1 class="text-white font-semibold text-xl">
+                Is VC Funding Drying Up?
+              </h1>
+              <p class="text-gray-400 my-3 text-lg">
+                Private funding by VC firms is down 50% YOY. We take a look at
+                what that means.
+              </p>
+            </div>
+          </div>
+        </div>
+        <div class="flex flex-col lg:flex-row">
+          <div class="flex flex-row mt-7">
+            <img src="./assets/images/image-retro-pcs.jpg" alt="" />
+            <div class="mx-4">
+              <h1 class="text-5xl text-gray-500 font-bold mb-5">01</h1>
+              <h2 class="text-black text-xl font-bold mb-4">
+                Reviving Retro PCs
+              </h2>
+              <p>What happens when old PCs are given modern upgrades?</p>
+            </div>
+          </div>
+          <div class="flex flex-row mt-7">
+            <img src="./assets/images/image-top-laptops.jpg" alt="" />
+            <div class="mx-4">
+              <h1 class="text-5xl text-gray-500 font-bold mb-5">02</h1>
+              <h2 class="text-black text-xl font-bold mb-4">
+                Top 10 Laptops of 2022
+              </h2>
+              <p>Our best picks for various needs and budgets.</p>
+            </div>
+          </div>
+          <div class="flex flex-row mt-7 ml-4">
+            <img src="./assets/images/image-gaming-growth.jpg" alt="" />
+            <div class="mx-4">
+              <h1 class="text-5xl text-gray-500 font-bold mb-5">03</h1>
+              <h2 class="text-black text-xl font-bold mb-4">
+                The Growth of Gaming
+              </h2>
+              <p class="">How the pandemic has sparked fresh opportunities.</p>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <div class="attribution">
+      Challenge by
+      <a href="https://www.frontendmentor.io?ref=challenge" target="_blank"
+        >Frontend Mentor</a
+      >. Coded by <a href="#">Your Name Here</a>.
+    </div>
+    <script>
+      // const list = document.querySelector(".navlink");
+      const navbar = document.querySelector("#navbar");
+      function toggleMenu(e) {
+        navbar.classList.toggle("hidden");
+      }
+    </script>
+  </body>
+</html>
